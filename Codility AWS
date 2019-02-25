@@ -1,0 +1,79 @@
+package BasicConcept;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AWS {
+	public static void main(String args[]) {
+		
+		System.out.println("Hello world");
+		
+		int A = 0;
+		int B = 0;
+		int C = 7;
+		int D = 6;
+		int E = 8;
+		int F = 0;
+		
+		List<Integer> arrayList = new ArrayList<Integer>();
+		int[] array = {A,B,C,D,E,F};
+		for(int i : array) {
+			arrayList.add(Integer.valueOf(i));
+		}
+		
+		
+		sortNumber(arrayList);
+		
+	}
+		
+		public static int[] recursive(List<Integer> arrayList) { {
+			
+			int size = arrayList.size();
+			int value = 0;
+			
+			StringBuffer sb = new StringBuffer();
+			
+			for(int i = 6; i < 0; i--){ // select the most value 59
+				sb.append(arrayList.get(i));
+				arrayList.remove(i);
+				
+				int j = i;
+				boolean found = false;
+				while(found == false) {
+					if(arrayList.get(j) < 6) {
+						sb.append(arrayList.get(j));
+						j--;
+						found = true;
+					}
+				}
+				arrayList.remove(j);
+				
+			}
+			
+		}
+	}
+	
+	public String solution(int A, int B, int C, int D, int E, int F) {
+        
+		
+		String time = "";
+		return time;
+    }
+	
+	public static List<Integer> sortNumber(List<Integer> arrayList) {
+//		int[] array = {A,B,C,D,E,F};
+		
+		for(int i=0; i < 5; i++) {
+			for(int j=i+1; j<6; j++) {
+				if(arrayList.get(i) > arrayList.get(j)) {
+					int temp = arrayList.get(i);
+					arrayList.set(i, arrayList.get(j));
+					arrayList.set(j, temp);
+				}
+			}
+		}
+		for(int i = 0; i < 6; i++)
+		System.out.println(arrayList.get(i));
+		return arrayList;
+	}
+}
